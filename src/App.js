@@ -1,17 +1,12 @@
-import MapSample from "./lessons/jsxSample/MapSample"
-import Footer from "./lessons/templateSample/Footer"
-import Header from "./lessons/templateSample/Header"
-import Navbar from "./lessons/templateSample/Navbar"
-import PageContent from "./lessons/templateSample/PageContent"
-
+import StateArraySample from "./lessons/stateSample/StateArraySample"
+import StateArraySample2 from "./lessons/stateSample/StateArraySample2"
+import StateSample1 from "./lessons/stateSample/StateSample1"
+import StateSample2 from "./lessons/stateSample/StateSample2"
 
 
 function App() {
   return <>
-    <Navbar />
-    <Header />
-    <PageContent />
-    <Footer/>
+  <StateArraySample2/>
   </>
 }
 

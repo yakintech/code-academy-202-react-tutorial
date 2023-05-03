@@ -1,2 +1,3 @@
 callstack
-chrome ext
+chrome ext react dev tools
+chor ext lightscreen
