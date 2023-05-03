@@ -9,9 +9,6 @@ function StateArraySample2() {
     const addRandom = () => {
         let randomNumber = Math.floor(Math.random() * 100);
         numbers.push(randomNumber);
-
-
-        
         setnumbers([...numbers])
     }
 
