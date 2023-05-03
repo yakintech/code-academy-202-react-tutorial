@@ -1,15 +1,17 @@
-import About from "./About"
-import SiteContent from "./lessons/components/SiteContent"
-import SiteFooter from "./lessons/components/SiteFooter"
-import SiteHeader from "./lessons/components/SiteHeader"
-import IfElseSample from "./lessons/jsxSample/IfElseSample"
 import MapSample from "./lessons/jsxSample/MapSample"
-import UserBox from "./lessons/jsxSample/UserBox"
+import Footer from "./lessons/templateSample/Footer"
+import Header from "./lessons/templateSample/Header"
+import Navbar from "./lessons/templateSample/Navbar"
+import PageContent from "./lessons/templateSample/PageContent"
 
 
-function App(){
+
+function App() {
   return <>
-  <MapSample/>
+    <Navbar />
+    <Header />
+    <PageContent />
+    <Footer/>
   </>
 }
 
