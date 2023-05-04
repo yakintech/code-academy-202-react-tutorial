@@ -7,6 +7,11 @@ function ProductPage() {
     const [products, setproducts] = useState(productsData);
     const [productId, setproductId] = useState(0);
 
+    //edit form inputs
+    const [editName, seteditName] = useState('');
+    const [editPrice, seteditPrice] = useState(0);
+    const [editId, seteditId] = useState(0)
+
     const removeProduct = (id) => {
         let filteredProducts = products.filter(q => q.id != id);
         setproducts(filteredProducts)
@@ -25,6 +30,23 @@ function ProductPage() {
         setproducts(filteredProducts)
     }
 
+
+    const editProduct = (item) => {
+        seteditName(item.name);
+        seteditPrice(item.unitPrice)
+        seteditId(item.id)
+    }
+
+
+    const save = () => {
+        let product = products.find(q => q.id == editId);
+
+        product.name = editName;
+        product.unitPrice = editPrice;
+
+        setproducts([...products])
+    }
+
     return (<>
         <div>
             <label>Search: </label>
@@ -38,8 +60,22 @@ function ProductPage() {
             <input type='text' onChange={(e) => setproductId(e.target.value)} />
             <button onClick={() => removeProduct(productId)}>Remove</button>
         </div>
+        <hr></hr>
+        <div>
+            <div>
+                <label>Name: </label>
+                <input type='text' value={editName} onChange={(e) => seteditName(e.target.value)}/>
+            </div>
+            <div>
+                <label>Price: </label>
+                <input type='text' value={editPrice} onChange={(e) => seteditPrice(e.target.value)}/>
+            </div>
+            <div>
+                <button onClick={save}>Save</button>
+            </div>
+        </div>
 
-        <ProductsTable products={products} removeProduct={removeProduct} />
+        <ProductsTable products={products} removeProduct={removeProduct} editProduct={editProduct} />
     </>
     )
 }
