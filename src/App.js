@@ -1,11 +1,8 @@
-import BoxModel from "./lessons/propSample/BoxModel"
-import ProductBoxModel from "./lessons/propSample/ProductBoxModel"
-import ProductPage from "./lessons/propStateSample/ProductPage"
-import SupplierTable from "./lessons/propStateSample/SupplierTable"
+import AnimalsFavorites from "./lessons/stateSample/AnimalsFavorites"
 
 function App() {
   return <>
-    <SupplierTable />
+    <AnimalsFavorites />
   </>
 }
 
