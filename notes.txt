@@ -1,3 +1,11 @@
 callstack
 chrome ext react dev tools
 chor ext lightscreen
+
+
+
+https://northwind.vercel.app/api/suppliers
+1) url den datalar alınıp boş bir js dosyasına yazılacak
+2) SupplierPage ve SupplierTable adında 2 component oluşturulacak
+3) SupplierPage den SupplierTable a datalar prop vasıtasıyla gidecek
+

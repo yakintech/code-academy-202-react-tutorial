@@ -23,7 +23,7 @@ export const productsData = [
         "discontinued": false,
         "name": "Uncle Bob's Organic Dried Pears"
     },
-    {
+    { 
         "id": 8,
         "supplierId": 3,
         "categoryId": 2,
