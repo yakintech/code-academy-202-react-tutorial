@@ -1,8 +1,8 @@
-import AnimalsFavorites from "./lessons/stateSample/AnimalsFavorites"
+import OrderPage from "./lessons/effectSample/OrderPage"
 
 function App() {
   return <>
-    <AnimalsFavorites />
+    <OrderPage />
   </>
 }
 
