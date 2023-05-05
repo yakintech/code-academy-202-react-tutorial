@@ -5,6 +5,9 @@ function OrderPage() {
 
     const [orders, setorders] = useState([]);
 
+    const [shipName, setshipName] = useState('');
+    const [orderDate, setorderDate] = useState('')
+
     useEffect(() => {
         loadData();
     }, [])
@@ -12,9 +15,9 @@ function OrderPage() {
 
     const loadData = () => {
         axios.get('https://northwind.vercel.app/api/orders')
-        .then(res => {
-            setorders(res.data);
-        })
+            .then(res => {
+                setorders(res.data);
+            })
     }
 
     const deleteProduct = (id) => {
@@ -28,8 +31,35 @@ function OrderPage() {
     }
 
 
+    const add = () => {
+
+        let newOrder = {
+            shipName: shipName,
+            orderDate: orderDate
+        }
+
+        axios.post('https://northwind.vercel.app/api/orders', newOrder)
+            .then(res => {
+                loadData();
+            })
+
+    }
+
     return (<>
 
+        <div>
+            <div>
+                <label htmlFor="">Ship Name</label>
+                <input type='text' onChange={(e) => setshipName(e.target.value)} />
+            </div>
+            <div>
+                <label htmlFor="">Order Date</label>
+                <input type='date' onChange={(e) => setorderDate(e.target.value)} />
+            </div>
+            <div>
+                <button onClick={add}>Add</button>
+            </div>
+        </div>
         <table className="w3-table w3-striped">
             <thead>
                 <tr>
