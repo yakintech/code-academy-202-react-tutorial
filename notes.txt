@@ -9,3 +9,16 @@ https://northwind.vercel.app/api/suppliers
 2) SupplierPage ve SupplierTable adında 2 component oluşturulacak
 3) SupplierPage den SupplierTable a datalar prop vasıtasıyla gidecek
 
+
+
+
+Router 
+
+1. react-router-dom kütüphanesini yükle
+
+
+
+
+
+useParams hook ile url den gelen PARAMETREYİ YAKALIYORUM
+useNavigate hook ile dilediğim yere yönlendirme yapıyorumç
