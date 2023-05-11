@@ -7,12 +7,16 @@ import ProductPage from "./lessons/pages/ProductPage"
 import ProductDetail from "./lessons/pages/ProductDetail"
 import Login from "./lessons/pages/Login"
 import Auth from "./lessons/pages/Auth"
+import AntdIntro from "./lessons/antd/AntdIntro"
+import AntTable from "./lessons/antd/AntTable"
 
 
 
 function App() {
 
   let loginControl = localStorage.getItem('login');
+
+
 
   return <>
     <h1>Site Header</h1>
@@ -22,10 +26,18 @@ function App() {
         <li><Link to='/about'>About</Link></li>
         <li><Link to='/contact'>Contact</Link></li>
         <li><Link to='/products'>Products</Link></li>
+        <li><Link to='/antd'>Antd</Link></li>
+        <li><Link to='/anttable'>Antd</Link></li>
+
+
       </ul>
     </div>
     <Routes>
+
       <Route path="/" element={<HomePage />}></Route>
+      <Route path="/antd" element={<AntdIntro />}></Route>
+      <Route path="/anttable" element={<AntTable />}></Route>
+
       <Route path="/about" element={<AboutPage />}></Route>
       <Route path="/login" element={<Login />}></Route>
 

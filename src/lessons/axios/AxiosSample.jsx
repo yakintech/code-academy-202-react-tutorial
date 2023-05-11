@@ -6,6 +6,7 @@ function AxiosSample() {
     const [categories, setcategories] = useState([])
 
 
+
     useEffect(() => {
         axios.get('https://northwind.vercel.app/api/categoriessss')
             .then(res => {
