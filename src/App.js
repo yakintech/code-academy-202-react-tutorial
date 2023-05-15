@@ -28,8 +28,6 @@ function App() {
         <li><Link to='/products'>Products</Link></li>
         <li><Link to='/antd'>Antd</Link></li>
         <li><Link to='/anttable'>Antd</Link></li>
-
-
       </ul>
     </div>
     <Routes>
@@ -37,12 +35,9 @@ function App() {
       <Route path="/" element={<HomePage />}></Route>
       <Route path="/antd" element={<AntdIntro />}></Route>
       <Route path="/anttable" element={<AntTable />}></Route>
-
       <Route path="/about" element={<AboutPage />}></Route>
       <Route path="/login" element={<Login />}></Route>
-
       <Route path="/contact" element={loginControl ? <ContactPage/> : <Login/>}></Route>
-
       <Route path="/products" element={
         <Auth>
           <ProductPage />
