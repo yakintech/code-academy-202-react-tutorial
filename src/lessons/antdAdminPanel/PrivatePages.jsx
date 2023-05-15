@@ -6,6 +6,7 @@ import Dashboard from './Dashboard';
 import ProductListPage from './ProductListPage';
 import AddProductPage from './AddProductPage';
 import { LoginContext } from './LoginContext';
+import RoleControl from './RoleControl';
 
 
 
@@ -13,11 +14,11 @@ import { LoginContext } from './LoginContext';
 function PrivatePages() {
     let navigate = useNavigate();
 
-    const {loginStatus, setloginStatus } = useContext(LoginContext);
+    const { loginStatus, setloginStatus } = useContext(LoginContext);
 
     const signout = () => {
         setloginStatus(false);
-        localStorage.setItem('login',false);
+        localStorage.setItem('login', false);
     }
 
     return (<>
@@ -60,7 +61,13 @@ function PrivatePages() {
                 <div style={{ padding: 24, minHeight: 380 }}>
                     <Routes>
                         <Route path='/' element={<Dashboard />} />
-                        <Route path='/addproduct' element={<AddProductPage />} />
+                        <Route
+                            path='/addproduct'
+                            element={
+                                <RoleControl>
+                                    <AddProductPage/>
+                                </RoleControl>
+                            } />
                         <Route path='/products' element={<ProductListPage />} />
                     </Routes>
 

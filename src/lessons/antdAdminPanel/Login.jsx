@@ -14,6 +14,7 @@ function Login() {
         if (email == 'cagatay@mail.com' && password == '123') {
             setloginStatus(true);
             localStorage.setItem('login',true);
+            localStorage.setItem('role','superadmin')
         }
         else {
             alert('email veya password hatalı!');
