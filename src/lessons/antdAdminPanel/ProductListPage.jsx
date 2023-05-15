@@ -3,6 +3,7 @@ import axios from 'axios';
 import React, { useEffect } from 'react'
 import { useState } from 'react';
 import { ExclamationCircleFilled } from '@ant-design/icons';
+import { useNavigate, useNavigation } from 'react-router-dom';
 
 
 const { confirm } = Modal;
@@ -10,7 +11,9 @@ const { confirm } = Modal;
 function ProductListPage() {
 
   const [products, setproducts] = useState([]);
-  const [loading, setloading] = useState(true)
+  const [loading, setloading] = useState(true);
+
+  let navigate = useNavigate();
 
   useEffect(() => {
     loadData();
@@ -35,7 +38,7 @@ function ProductListPage() {
         setloading(true);
         axios.delete('https://northwind.vercel.app/api/products/' + id)
           .then(data => {
-              loadData();
+            loadData();
           })
 
       },
@@ -77,6 +80,7 @@ function ProductListPage() {
 
 
   return (<>
+    <Button type='primary' onClick={() => navigate('/addproduct')}>Add</Button>
     <Table
       dataSource={products}
       columns={columns}

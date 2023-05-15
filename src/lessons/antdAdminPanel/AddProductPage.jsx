@@ -1,10 +1,22 @@
-import { Form, Input } from 'antd';
+import { Button, Form, Input } from 'antd';
+import axios from 'axios';
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
+
+
 
 function AddProductPage() {
 
-  const onFinish = (values) => {
-    console.log('Values', values);
+
+  let navigate = useNavigate();
+
+  const submitProductForm = (values) => {
+
+    axios.post('https://northwind.vercel.app/api/products', values)
+      .then(res => {
+        navigate('/products');
+      })
+
   }
 
 
@@ -12,8 +24,8 @@ function AddProductPage() {
 
     <Form
       name='basic'
-      initialValues={{ namee: '', unitPrice: 0, unitsInStock: 0 }}
-      onFinish={onFinish}
+      initialValues={{ name: '', unitPrice: 0, unitsInStock: 0 }}
+      onFinish={submitProductForm}
     >
 
       <Form.Item
@@ -24,7 +36,23 @@ function AddProductPage() {
         <Input />
       </Form.Item>
 
-      <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+      <Form.Item
+        label="Unit Price"
+        name="unitPrice"
+        rules={[{ required: true, message: 'Please input unit price!' }]}
+      >
+        <Input />
+      </Form.Item>
+
+      <Form.Item
+        label="Units In Stock"
+        name="unitsInStock"
+        rules={[{ required: true, message: 'Please input units in stock!' }]}
+      >
+        <Input />
+      </Form.Item>
+
+      <Form.Item>
         <Button type="primary" htmlType="submit">
           Submit
         </Button>
