@@ -1,8 +1,12 @@
 import React from 'react'
+import FormikSample from './FormikSample'
+import ReactHookFormSample from './ReactHookFormSample'
 
 function Dashboard() {
-  return (
-    <div>Dashboard</div>
+  return (<>
+    {/* <FormikSample/> */}
+    <ReactHookFormSample/>
+  </>
   )
 }
 

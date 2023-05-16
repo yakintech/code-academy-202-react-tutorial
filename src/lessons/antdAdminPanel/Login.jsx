@@ -42,3 +42,16 @@ function Login() {
 }
 
 export default Login
+
+
+
+//https://northwind.vercel.app/api/suppliers datalar axios ile çekilecek ve antd table da listelenecek
+//columns =>   Id, CompanyName, ContactName, City
+//CompanyName göre sort edebileyim
+//ContactName göre sort edebileyim
+
+//Table delete butonu ve ona göre delete işlemi ***
+
+
+
+//*** City Tokyo ise o satır tamamen TOMATO olsun (opsiyonel)
