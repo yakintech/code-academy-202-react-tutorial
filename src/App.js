@@ -10,6 +10,7 @@ import Auth from "./lessons/pages/Auth"
 import AntdIntro from "./lessons/antd/AntdIntro"
 import AntTable from "./lessons/antd/AntTable"
 import OrderPage from "./lessons/pages/OrderPage"
+import CategoryPage from "./lessons/pages/CategoryPage"
 
 
 
@@ -30,6 +31,8 @@ function App() {
         <li><Link to='/antd'>Antd</Link></li>
         <li><Link to='/anttable'>Antd</Link></li>
         <li><Link to='/orders'>Orders</Link></li>
+        <li><Link to='/categories'>Category Page</Link></li>
+
 
       </ul>
     </div>
@@ -38,6 +41,7 @@ function App() {
       <Route path="/" element={<HomePage />}></Route>
       <Route path="/antd" element={<AntdIntro />}></Route>
       <Route path="/orders" element={<OrderPage />}></Route>
+      <Route path="/categories" element={<CategoryPage />}></Route>
 
       <Route path="/anttable" element={<AntTable />}></Route>
       <Route path="/about" element={<AboutPage />}></Route>

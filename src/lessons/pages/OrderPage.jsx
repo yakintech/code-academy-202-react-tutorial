@@ -3,6 +3,8 @@ import React from 'react'
 import { useState } from 'react'
 import { useMutation, useQuery } from 'react-query'
 import { queryClient } from '../..';
+import { useEffect } from 'react';
+import { ref } from 'yup';
 
 function OrderPage() {
 
@@ -22,7 +24,7 @@ function OrderPage() {
             //refetchInterval: 10000,
 
             //20 saniye boyunca datayı cache de tut!
-            staleTime: 2000000
+            staleTime: 20000
 
         }
     )
@@ -31,9 +33,9 @@ function OrderPage() {
         //refetch function ile datayı tekrar çekiyorum.
         refetch();
     }
+    
 
-
-
+    //post, put...
     const mutation = useMutation({
         mutationFn: async (params) => {
             const { data } = await axios.post('https://northwind.vercel.app/api/orders', params);
