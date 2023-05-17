@@ -1,16 +1,22 @@
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
-import App2 from './App2';
+
 import { LoginProvider } from './lessons/antdAdminPanel/LoginContext';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+export const queryClient = new QueryClient()
+
 root.render(
-    <LoginProvider>
-        <BrowserRouter>
-            <App2></App2>
-        </BrowserRouter>
-    </LoginProvider>
+    <QueryClientProvider client={queryClient}>
+        <LoginProvider>
+            <BrowserRouter>
+                <App></App>
+            </BrowserRouter>
+        </LoginProvider>
+    </QueryClientProvider>
+
 
 
 );

@@ -20,6 +20,9 @@ function ProductPage() {
             .then(res => {
                 setproducts(res.data);
             })
+            .catch(err => {
+                
+            })
     }
 
 

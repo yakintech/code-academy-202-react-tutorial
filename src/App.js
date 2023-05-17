@@ -9,6 +9,7 @@ import Login from "./lessons/pages/Login"
 import Auth from "./lessons/pages/Auth"
 import AntdIntro from "./lessons/antd/AntdIntro"
 import AntTable from "./lessons/antd/AntTable"
+import OrderPage from "./lessons/pages/OrderPage"
 
 
 
@@ -28,26 +29,30 @@ function App() {
         <li><Link to='/products'>Products</Link></li>
         <li><Link to='/antd'>Antd</Link></li>
         <li><Link to='/anttable'>Antd</Link></li>
+        <li><Link to='/orders'>Orders</Link></li>
+
       </ul>
     </div>
     <Routes>
 
       <Route path="/" element={<HomePage />}></Route>
       <Route path="/antd" element={<AntdIntro />}></Route>
+      <Route path="/orders" element={<OrderPage />}></Route>
+
       <Route path="/anttable" element={<AntTable />}></Route>
       <Route path="/about" element={<AboutPage />}></Route>
       <Route path="/login" element={<Login />}></Route>
       <Route path="/contact" element={loginControl ? <ContactPage/> : <Login/>}></Route>
       <Route path="/products" element={
-        <Auth>
+
           <ProductPage />
-        </Auth>
+
       
       }></Route>
       <Route path="/products/:id" element={
-        <Auth>
+  
           <ProductDetail />
-        </Auth>
+
       }></Route>
 
       
